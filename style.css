@@ -63,7 +63,7 @@ header .icons .fa-search {
 
 /* Video Player */
 .player {
-  position: sticky;
+  /* position: sticky; */
   top: 0;
   text-align: center;
   background-color: var(--black-color);
@@ -72,11 +72,10 @@ header .icons .fa-search {
 .player video {
   width: 100%;
   height: 100%;
-  max-width: 1000px;
 }
 
 /* Video Info */
-body > .info {
+.playerAndInfo > .info {
   padding: var(--padding);
 }
 
@@ -201,7 +200,7 @@ body > .info {
 }
 
 .upNext .item .img {
-  flex: 1 1 35%;
+  flex: 0 1 100px;
   margin-right: var(--padding);
 }
 
@@ -225,6 +224,10 @@ body > .info {
 
 .upNext .item .info .title {
   font-size: var(--font-small);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 .upNext .item .info .name,
@@ -233,14 +236,19 @@ body > .info {
   color: var(--grey-dark-color);
 }
 
-.infoAndUpNext {
+.playerAndInfoAndUpNext {
   display: flex;
   flex-direction: column;
 }
 
-@media screen and (min-width: 768px) {
-  .infoAndUpNext {
+@media screen and (min-width: 1024px) {
+  .playerAndInfoAndUpNext {
     flex-direction: row;
-    margin: var(--padding) 0;
+  }
+  .playerAndInfo {
+    flex: 0 1 1024px;
+  }
+  .upNext {
+    flex: 1 1 30%;
   }
 }
